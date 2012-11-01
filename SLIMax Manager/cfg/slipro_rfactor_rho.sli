@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings version="SLIPREFS02" flag="4" value=" " info="SLI-PRO r(h)o Settings #~http://www.eksimracing.com">
+	<GENERAL info="Common device options" flag="15">
+		<REVERSE flag="15" info="choose the reverse char (* for blank char)" value="r"/>
+		<NEUTRAL value="n" info="choose the neutral char (* for blank char)" flag="15"/>
+	</GENERAL>
+	<SLIPRO info="SLI-PRO device options" flag="4">
+		<HELP flag="4" value=" " info="Define the default value for speed-limiter method, left and right panel function, max left and right functions, Quick-Info left and right function"/>
+		<SPDLMTMETHOD flag="6" info="SPD LMT Methods functions are defined in speedlimiter.lua script. Enter a value from 0 to 5 (default 3)" value="2"/>
+		<SPDLMTRPMLEDONLY flag="6" value="false" info="Enter true if you want to blink the RPM led without the speedlimiter led when speedlimiter is activated."/>
+		<LEFTDIGITSPANELS flag="4" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20" info="Double-Click 'LEFTDIGITSPANELS' tag to assign left panel functions and apply your change. These functions are defined in slipro.lua script#~Custom Script can change the default behavior.#~These Functions ARE Not Available In All Simulation/Game"/>
+		<RIGHTDIGITSPANELS flag="4" info="Double-Click 'RIGHTDIGITSPANELS' tag to assign right panel functions (time related functions) and apply your change. These functions are defined in slipro.lua script#~Custom Script can change the default behavior.#~These Functions ARE Not Available In All Simulation/Game" value="1,2,3,18,20,22,23"/>
+		<QIFUNCTIONLEFT flag="6" value="0" info="Enter the corresponding function number (0 to deactivate) to show the info on left digits while you keep the button assigned to QIButton pressed (see the functions list in the slipro.lua script or by editing LEFTDIGITSPANELS tag)."/>
+		<QIFUNCTIONRIGHT flag="6" value="0" info="Enter the corresponding function number (0 to deactivate) to show the info on right digits while you keep the button assigned to QIButton pressed (see the functions list in slipro.lua script or by editing RIGHTDIGITSPANELS tag)."/>
+		<BUTTONSCHARSMAPPING flag="38" info="Buttons from 1 to 16: Activate (true) or deactivate (false) button mapping to char function" value="false"/>
+		<BTNCHARLIST flag="38" value="NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA" info="Map each button to char (from button 1 to 16)  double-click BTNCHARLIST to open the wizard panel and do your mapping."/>
+		<SW4CHARSMAPPING value="false" flag="38" info="Switch 4: Activate (true) or deactivate (false) switch mapping to char function"/>
+		<SW4CHARS value="NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA" flag="38" info="set each position of switch to map it to char (up to 12 mapping per switch)"/>
+		<SW5CHARSMAPPING value="false" flag="38" info="Switch 5: Activate (true) or deactivate (false) switch mapping to char function"/>
+		<SW5CHARS value="NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA" flag="38" info="set each position of switch to map it to char (up to 12 mapping per switch)"/>
+		<SW6CHARSMAPPING value="false" flag="38" info="Switch 6: Activate (true) or deactivate (false) switch mapping to char function"/>
+		<SW6CHARS value="NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA" flag="38" info="set each position of switch to map it to char (up to 12 mapping per switch)"/>
+	</SLIPRO>
+	<SHIFTPOINTS info="Shiftpoints is calculated on fly and depend the car you drive (see method below)" flag="6">
+		<HELP info="OSP Feedback method is defined in osp.lua script and contains the following methods: #~#~0 default  two std blue led blinking#~1 two std blue led blinking + shiftlights rpm blue blinking#~2 normal blinking + shiftlights rpm blue no blinking#~3 shiftlights rpm blue only no blinking#~4 shiftlights rpm blue only blinking" flag="6"/>
+		<SHIFTPOINTSMETHOD info="Enter the type of OSP feedback (method used) from 0 to 4 (default 0)." flag="6" value="1"/>
+	</SHIFTPOINTS>
+	<LED flag="6" value=" " info="####### Leds Layout  ######">
+		<HELP info="Set the corresponding function for each led from 1 to 11#~(6 extra and 5 external)#~#~RESET LED what does it means?#~#~well, by default all led are reseted before applying its new state, typically ON or OFF and this work fine if you have each led function assigned to ONE led only!#~#~But now, let say you have TC and Pit-Request on the same led. If you allow reset for both function TC can't be ON if the Pit-Request is OFF! #~PitReq function is after TC (see the priority order below) and will reset the state of TC...#~#~In other words, to avoid reseting the led you just have to put false in the 2th function this way the led will stay highlighted if one of the two function state is ON... clear? hope so!#~#~Here the current priority order of all functions :#~#~Ignition (supersede all other with no led and 'E' displayed)#~shiftpoint#~speedlimiter#~low fuel#~TC#~ALB#~Green flag#~Yellow flag#~Red flag#~Overheating#~Damage#~PitReq and InPits#~Power#~RevLimit#~Headlights#~SafePrefs#~IMPORTANT External method (supersede all other if activated)" flag="6"/>
+		<LEDOPTIMALSHIFTPOINTRIGHT value="6" info="set if you want to have a shiftpoint feedback on one or two led, value from led 1 to 11 (zero to deactivate)" flag="6"/>
+		<LEDOPTIMALSHIFTPOINTLEFT value="1" info="set if you want to have a shiftpoint feedback on one or two led, value from led 1 to 11 (zero to deactivate)" flag="6"/>
+		<LEDSPEEDLIMITER value="5" info="set if you want to have a speedlimiter feedback, value from led 1 to 11 (zero to deactivate)" flag="6"/>
+		<LEDLOWFUEL value="2" info="set if you want to have a low fuel feedback value from led 1 to 11 (zero to deactivate)" flag="6"/>
+		<RESETLEDTRACTIONCONTROL value="true" info="set if you want to have a TC feedback" flag="6"/>
+		<LEDTRACTIONCONTROL value="4" info="value from led 1 to 11  (zero to deactivate)" flag="6"/>
+		<RESETLEDANTILOCKBRAKES value="true" info="set if you want to have a anti-lock brakes feedback" flag="6"/>
+		<LEDANTILOCKBRAKES value="3" info="value from led 1 to 11  (zero to deactivate)" flag="6"/>
+		<RESETLEDGREENFLAG value="true" info="set if you want to have a green flag feedback (not implemented in all API)" flag="6"/>
+		<LEDGREENFLAG info="value from led 1 to 11  (zero to deactivate)" flag="6" value="10"/>
+		<RESETLEDYELLOWFLAG flag="6" value="true" info="set if you want to have a yellow flag feedback (not implemented in all API)"/>
+		<LEDYELLOWFLAG value="2" info="value from led 1 to 11  (zero to deactivate)" flag="6"/>
+		<RESETLEDREDFLAG value="true" info="set if you want to have a red flag feedback (not implemented in all API)" flag="6"/>
+		<LEDREDFLAG info="value from led 1 to 11  (zero to deactivate)" flag="6" value="9"/>
+		<RESETLEDDAMAGE flag="6" value="true" info="set if you want to have a damage feedback (not implemented in all API)"/>
+		<LEDDAMAGE value="3" info="value from led 1 to 11  (zero to deactivate)" flag="6"/>
+		<RESETLEDOVERHEATING flag="6" value="true" info="set if you want to have an overheating feedback"/>
+		<LEDOVERHEATING value="3" info="value from led 1 to 11  (zero to deactivate)" flag="6"/>
+		<RESETLEDREVLIMIT value="true" info="set if you want to have the revlimit feedback" flag="6"/>
+		<LEDREVLIMIT value="8" info="value from led 1 to 11  (zero to deactivate)" flag="6"/>
+		<RESETLEDPOWER value="true" info="set if you want to have a power ON/OFF feedback" flag="6"/>
+		<LEDPOWER value="11" info="value from led 1 to 11  (zero to deactivate)" flag="6"/>
+		<RESETLEDPITREQUEST flag="6" value="true" info="set if you want to have a pit request and inpits feedback"/>
+		<LEDPITREQUEST value="6" info="value from led 1 to 11  (zero to deactivate)" flag="6"/>
+		<RESETLEDHEADLIGHTS value="true" info="set if you want to have a headlights feedback" flag="6"/>
+		<LEDHEADLIGHTS info="value from led 1 to 11  (zero to deactivate)" flag="6" value="8"/>
+		<RESETLEDSAFEPREFS value="false" info="set when SafePrefs toggle button is ON" flag="6"/>
+		<LEDSAFEPREFS value="10" info="value from led 1 to 11  (zero to deactivate)" flag="6"/>
+		<RESETLEDBLUEFLAG flag="6" value="true" info="set if you want to have a blue flag feedback (not implemented in all API)"/>
+		<LEDBLUEFLAG value="1" info="value from led 1 to 11  (zero to deactivate)" flag="6"/>
+		<RESETLEDDRS flag="38" value="true" info="set if you want to have a DRS feedback (not implemented in all API)"/>
+		<LEDDRS flag="38" value="10" info="value from led 1 to 11  (zero to deactivate)"/>
+	</LED>
+	<SHIFTLIGHTS info="Shiftlights options" flag="15">
+		<HELP info="SHIFTLIGHTS Methods Information defined in shiftlights.lua script." flag="15"/>
+		<SHIFTLIGHTSTYPE flag="15" info="SHIFTLIGHTS Methods Functions are defined in shiftlights.lua script. the default implementation contains the following methods:#~0 Progressive,#~1 all green/red/blue alternatively,#~2 percentage method,#~3 absolute method (not recommended), #~4 from side to center" value="2"/>
+		<RPMVALUES flag="22" value="50,55,60,65,70,75,80,85,90,95,97,98,99" info="Individual RPM threshold value in percentage for shiftlights , for all 13 leds #~set the value of each led from 0 to 100%#~*Double-Click 'RPMVALUES' tag to edit RPM values and apply your change"/>
+		<RPMABSOLUTE flag="22" value="15452,15545,15823,16354,16410,16675,17252,17545,17823,18354,18510,18655,18675" info="Individual RPM threshold value for shiftlights, for all 13 leds #~set the value of each led from 0 to 20000%#~*Double-Click 'RPMABSOLUTE' tag to edit RPM values and apply your change"/>
+	</SHIFTLIGHTS>
+	<BRIGHTNESS info="Global and indivudual brightness options" flag="6">
+		<MAXBRIGHTNESS flag="6" value="145" info="Calibrate your device brightness by adjusting the maximum brightness value from 128 to 220 (default 145 for SLI-PRO).#~To calibrate your device, Choose the Test Device... menu and check if the device do not reset by itself during the testing process, if it does, decrease the maximum value."/>
+		<GLOBALBRIGHTNESS flag="6" value="98%" info="GLOBAL BRIGHTNESS from 1 to 100%, (default 98%), use an encoder (2 inputs) to decrease or increase brightness."/>
+		<BRIGHTSTEP flag="6" value="10" info="Set the step for brightness adjustment (default 10)"/>
+		<TCBRIGHTNESS value="6" info="Max TC brightness from 3 to 8 (Default 6)" flag="6"/>
+		<ABSBRIGHTNESS value="6" info="Max ABS brightness from 3 to 8 (Default 6)" flag="6"/>
+		<RPMBRIGHTNESS flag="6" value="6,6,6,6,8,8,8,8,8,5,5,5,5" info="Individual brightness for shiftlights, for all 13 leds #~set the value of each led from 1 to 8"/>
+		<EXTRABRIGHTNESS flag="6" value="5,7,7,7,7,5" info="Individual brightness for the 6 extra leds  #~set the value of each led from 1 to 8"/>
+		<EXTERNALBRIGHTNESS value="7,7,7,7,7" info="Individual brightness for the 5 external leds  #~set the value of each led from 1 to 8" flag="6"/>
+		<GEARDIGITBRIGHTNESS info="Individual Digits brightness from 1 to 8" flag="6" value="7"/>
+		<TIMEDIGITBRIGHTNESS info="Individual Digits brightness from 1 to 8" flag="4" value="7"/>
+		<SPEEDDIGITBRIGHTNESS info="Individual Digits brightness from 1 to 8" flag="4" value="7"/>
+	</BRIGHTNESS>
+</settings>
